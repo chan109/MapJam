@@ -1,0 +1,56 @@
+body{
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    padding-top: 0;
+    font-size: 14px;
+}
+
+nav{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav h1{
+    width:20%;
+    display: inline-block;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+
+}
+
+nav ul{
+    width: 70%;
+    display: inline-block;
+    text-align: right;
+}
+
+nav li{
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+
+nav ul a{
+    text-decoration: none;
+    color: black;
+}
+
+.container{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}

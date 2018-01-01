@@ -1,0 +1,27 @@
+extends layout
+block style
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/index.css')
+
+block content
+    nav
+        h1 MapJamApp
+        ul
+            li
+                a(href="/") DashBoard
+            if(user)
+                li
+                    a(href="/logout") Logout
+            if(!user)
+                li
+                    a(href="/register") Register
+                li
+                    a(href="/login") Login
+        hr
+    div.container
+
+        p Welcome to your dashboard
+
+

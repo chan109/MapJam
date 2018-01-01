@@ -1,0 +1,97 @@
+extends layout
+block style
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/index.css')
+
+
+block script
+    script(src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous")
+
+    script(src="/javascripts/main.js")
+
+block content
+    nav
+        h1 MapJamApp
+        ul
+            li
+                a(href="/") DashBoard
+            li
+                a(href="/register") Register
+            li
+                a(href="/login") Login
+        hr
+
+    .container
+        .row
+            .col-md-6.col-md-offset-3
+                .panel.panel-login
+                    .panel-heading
+                        .row
+                            .col-xs-6
+                                a#login-form-link(href='#') Login
+                            .col-xs-6
+                                a#register-form-link.active(href='#') Register
+                        hr
+                    .panel-body
+                        .row
+                            .col-lg-12
+                                if(errors)
+                                    each error in errors
+                                        div.alert.alert-danger #{error.msg}
+
+                                form#login-form(action='/users/login', method='post', role='form', style='display: none;')
+                                    .form-group
+                                        input#username.form-control(type='text', name='username', tabindex='1', placeholder='Username', value='')
+                                    .form-group
+                                        input#password.form-control(type='password', name='password', tabindex='2', placeholder='Password')
+                                    .form-group.text-center
+                                        input#remember(type='checkbox', tabindex='3', name='remember')
+                                        label(for='remember')  Remember Me
+                                    .form-group
+                                        .row
+                                            .col-sm-6.col-sm-offset-3
+                                                input#login-submit.form-control.btn.btn-login(type='submit', name='login-submit', tabindex='4', value='Log In')
+                                    .form-group
+                                        .row
+                                            .col-lg-12
+                                                .text-center
+                                                    a.forgot-password(href='http://phpoll.com/recover', tabindex='5') Forgot Password?
+                                form#register-form(action='/users/register', method='post', role='form', style='display: block;')
+                                    .form-group
+                                        input#username.form-control(type='text', name='username', tabindex='1', placeholder='Username', value='')
+
+                                    .form-group
+                                        label.gender-label Male
+                                        input#male.form-control(type='radio', name='gender', tabindex='1', value='male')
+                                        label.gender-label Female
+                                        input#female.form-control(type='radio', name='gender', tabindex='1', value='female')
+
+                                    .form-group
+                                        input#password.form-control(type='password', name='password', tabindex='2', placeholder='Password')
+                                    .form-group
+                                        input#confirm-password.form-control(type='password', name='password2', tabindex='2', placeholder='Confirm Password')
+                                    .form-group
+                                        input#email.form-control(type='email', name='email', tabindex='1', placeholder='Email Address', value='')
+                                    .form-group
+                                        input#age.form-control(type='text', name='age', tabindex='1', placeholder='Age', value='')
+                                    .form-group
+                                        input#location.form-control(type='text', name='location', tabindex='1', placeholder='Location', value='')
+                                    .form-group
+                                        input#phone-number.form-control(type='text', name='phoneNumber', tabindex='1', placeholder='Phone-Number', value='')
+                                    .form-group
+                                        input#self-description.form-control(type='text', name='selfDescription', tabindex='1', placeholder='Self-Description', value='')
+                                    .form-group
+                                        input#user-img.form-control(type='text', name='userImge', tabindex='1', placeholder='Icon-Url', value='')
+                                    .form-group
+                                        input#instruments.form-control(type='text', name='instruments', tabindex='1', placeholder='Instruments (use commas as delimiter to separate each subject)', value='')
+                                    .form-group
+                                        input#videoLinks.form-control(type='text', name='videoLinks', tabindex='1', placeholder='Video Links (use commas as delimiter to separate each subject)', value='')
+
+                                    .form-group
+                                        .row
+                                            .col-sm-6.col-sm-offset-3
+                                                input#register-submit.form-control.btn.btn-register(type='submit', name='register-submit', tabindex='4', value='Register Now')
